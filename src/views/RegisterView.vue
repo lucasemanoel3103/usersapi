@@ -5,6 +5,11 @@
 
     <div class="columns is-centered">
       <div class="column is-half">
+        <div v-if="error != undefined">
+          <div class="notification is-danger">
+            {{ error }}
+          </div>
+        </div>
         <p>Nome</p>
         <input
           type="text"
@@ -43,21 +48,21 @@ export default {
       name: "",
       password: "",
       email: "",
+      error: null,
     };
   },
   methods: {
     register() {
-      axios.post("http://localhost:8686/user", {
-            name: this.name,
-            password: this.password,
-            email: this.email
-        })
-        .then((res) => {
+      axios
+        .post("http://localhost:8686/user", {
+          name: this.name,
+          password: this.password,
+          email: this.email,
+        }).then(res => {
           console.log(res);
-        })
-        .catch((err) => {
-            const msgErr = err.response.data.err;
-          console.log(msgErr);
+          this.$router.push({ name: 'home' });
+        }).catch(err => {
+         this.error = err.response?.data?.err || 'Erro na requisição. Verifique o servidor.';
         });
     },
   },
