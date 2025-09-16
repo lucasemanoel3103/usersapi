@@ -1,24 +1,27 @@
-# usersapi
+🚀 Integração Vue.js com API de Gerenciamento de Usuários
 
-## Project setup
-```
-npm install
-```
+Este projeto é uma integração de frontend em Vue.js com uma API de gerenciamento de usuários desenvolvida em Node.js, Express e Knex.js.
+Foi desenvolvido como parte do curso de Node.js do Guia do Programador (Victor Lima).
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+📌 Tecnologias utilizadas:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Frontend:
+ -Vue.js
+ -Axios
 
-### Lints and fixes files
-```
-npm run lint
-```
+Backend:
+- Node.js
+- Express
+- Knex.js
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Banco de dados relacional (MySQL)
+
+⚙️ Funcionalidades
+
+-Criar conta de usuário
+
+-Login com autenticação
+
+-Listar usuários cadastrados
+
+-Deletar usuários (com autenticação)
