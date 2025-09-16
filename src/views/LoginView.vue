@@ -50,7 +50,7 @@ export default {
         }).then(res => {
           console.log(res);
           localStorage.setItem('token', res.data.token);
-          this.$router.push({ name: 'home' });
+          this.$router.push({ name: 'Users' });
         }).catch(err => {
          this.error = err.response?.data?.err || 'Erro na requisição. Verifique o servidor.';
         });
